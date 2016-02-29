@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Place Order</title>
+<script type="text/javascript" src="Scripts/placeOrder.js"></script>
+<link href="css/Styles.css" type="text/css" rel="stylesheet"></link>
+</head>
+<body>
+	<form>
+		<div>
+			<h1>Place Order</h1>
+		</div>
+		<table>
+			<tr>
+				<td class='LeftTable'>Customer Name</td>
+				<td class='RightTable'><input id='customerName' type='text'
+					value='' /></td>
+			</tr>
+			<tr>
+				<td class='LeftTable'>Location</td>
+				<td class='RightTable'><select id='location'>
+						<option value="banglore">Banglore</option>
+						<option value="kolkata">Kolkata</option>
+						<option value="mumbai">Mumbai</option>
+						<option value="delhi" selected>Delhi</option>
+				</select></td>
+			</tr>
+			<tr>
+				<td class='LeftTable'>Payment Mode</td>
+				<td class='RightTable'><input type="radio" name="payment"
+					value="NetBanking" id="r1" checked> NetBanking <input
+					type="radio" name="payment" value="VISA" id="r2"> VISA <input
+					type="radio" name="payment" value="MASTER CARD" id="r3">Master
+					Card</td>
+			</tr>
+			<tr>
+				<td class='LeftTable'>Choose Offer</td>
+				<td class='RightTable'><input type="checkbox" name="offer"
+					value="Points">Points <input type="checkbox" name="offer"
+					value="Movie tickets"> Movie Tickets <input type="checkbox"
+					name="offer" value="Cashback"> Cashback</td>
+			</tr>
+			<tr>
+				<td><button id="reset" type="reset" value="Reset">Reset</button></td>
+				<td><button id="submit" type="submit" value="Submit">Submit</button>
+					<button value="Next" formaction="OrderDetails.html">Next</button></td>
+
+			</tr>
+		</table>
+	</form>
+	<script type="text/javascript">
+		document.getElementById("customerName").addEventListener('blur',
+				function() {
+					confirmName(document.getElementById('customerName').value)
+				});
+
+		document.getElementById("submit").addEventListener('click', function() {
+			summaryDisplay()
+		});
+	</script>
+</body>
+</html>
